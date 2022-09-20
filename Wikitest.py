@@ -16,11 +16,6 @@ from sklearn.feature_extraction.text import TfidfTransformer, TfidfVectorizer
 from sklearn.feature_selection import chi2
 import pickle
 
-
-
-
-
-os.chdir('/Users/lfairgrievepark12/Documents/Personal_Projects/Wikipedia_Neutrality/')
 def linkgen(template, count='all'):
     '''
     Pulls the links to wikipedia articles that are tagged with some user defined 
@@ -127,7 +122,7 @@ def inforeport(file):
     df = pd.read_csv(file, names=colnames, header=None)
 
     df['WordCount'] = df['ArticleText'].str.count(' ')+1
-    sns.histplot(data=df, x="WordCount", hue="Status", stat='density')
+    sns.histplot(data=df, x="WordCount", hue="Status", stat='count')
 
     flgrslt = _topwords(df,'flagged')
     unflgrslt = _topwords(df,'unflagged')
@@ -194,27 +189,3 @@ def articletester(pagetitles,picklefile):
     X = ttrans.transform(X)
     predictions=nb.predict(X)
     return(predictions)
-
-
-#links = linkgen('Autobiography')
-#datagen('datafile.csv',links,"Special:RandomInCategory/Living_people")
-
-#model = modelmaker('datafile.csv','pickle.pkl')
-#preds = articletester(['Charles_III','Sisqó','Nicoletta_Luciani','Grace_Deeb'],'pickle.pkl')
-#print(preds)
-#preds = articletester(['Charles_III'],model)
-
-'''
-(flgrslt, unflgrslt) = inforeport('datafile.csv')
-print(flgrslt)
-print(unflgrslt)
-
-plt.figure(1)
-flgrslt.plot.bar(rot=0, figsize=(8,5))
-plt.title('Top words flagged articles')
-
-plt.figure(2)
-unflgrslt.plot.bar(rot=0, figsize=(8,5))
-plt.title('Top words unflagged articles')
-plt.show(block=True)
-'''
