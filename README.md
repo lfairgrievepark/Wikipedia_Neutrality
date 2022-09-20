@@ -7,3 +7,5 @@ wikiscrape.py is taken from https://github.com/kohjiaxuan/Wikipedia-Article-Scra
 
 WikiNotebook.ipynb contains some early testing of the functions found in Wikitest.py and different attempts at machine learning models.
 
+![Alt text](demo1a.png?raw=true "Title")
+
