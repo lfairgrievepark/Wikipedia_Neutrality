@@ -7,5 +7,10 @@ wikiscrape.py is taken from https://github.com/kohjiaxuan/Wikipedia-Article-Scra
 
 WikiNotebook.ipynb contains some early testing of the functions found in Wikitest.py and different attempts at machine learning models.
 
+
+Additionally, an info report can be generated that compares article lengths and top 10 words between flagged and unflagged articles. This is shown below for demo1 which compares articles flagged for "POV", or, where the neutrality of the article is contested, compared to an equal number of random wikipedia articles.
+
 ![Alt text](demo1a.png?raw=true "Title")
+![Alt text](demo1b.png?raw=true "Title")
+![Alt text](demo1c.png?raw=true "Title")
 
